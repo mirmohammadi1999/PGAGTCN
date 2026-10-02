@@ -41,7 +41,7 @@ The complete evaluation can be reproduced directly in **Google Colab**. Simply o
 
 ```bash
 # 1. Clone the repository
-!git clone https://github.com/nadiaaam/PGAGTCN.git
+!git clone https://github.com/mirmohammadi1999/PGAGTCN.git
 
 # 2. Navigate to the directory
 %cd PGAGTCN
