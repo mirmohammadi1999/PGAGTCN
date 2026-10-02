@@ -6,7 +6,7 @@ PG-AGTCN combines a physics-guided sparse polynomial model with an **Adaptive Ga
 
 ## 🏛️ Model Architecture
 
-PG-AGTCN follows a hybrid physics-guided and data-driven design. The framework first identifies the dominant nonlinear components using **Lasso-based sparse polynomial extraction** followed by **OLS debiasing**. The remaining nonlinear residual is then refined using a lightweight **Adaptive Gated TCN**, which captures temporal memory effects. A **DC-aware loss function** is additionally used to improve the suppression of DC offset and carrier leakage.
+PG-AGTCN follows a hybrid physics-guided and data-driven design. The framework first identifies the dominant nonlinear components using **Lasso-based sparse polynomial extraction** followed by **OLS debiasing**. Taking the original transmitted signal as input, a lightweight Adaptive Gated TCN is then trained to predict and compensate for the remaining nonlinear residual. A DC-aware loss function is additionally used to improve the suppression of DC offset and carrier leakage (driving the DC-bin power down to -99.57 dBm, virtually reaching the noise floor).
 
 ## 🏆 Key Results
 
@@ -33,7 +33,8 @@ A key objective of PG-AGTCN is achieving high nonlinear cancellation performance
 - 10% Validation
 - 10% Testing
 
-Despite the limited amount of training data, PG-AGTCN maintains strong SIC performance, particularly under the severe nonlinear conditions of Dataset 2.
+Despite the limited amount of training data, PG-AGTCN maintains strong SIC performance, particularly under the severe nonlinear conditions of Dataset 2. Notably:
+- It maintains a highly competitive 32.6 dB of cancellation with as few as 2,000 total samples, a regime where standard deep learning models typically collapse.
 
 ## 🚀 Quick Start
 
